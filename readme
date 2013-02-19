@@ -4,4 +4,15 @@ Works with Three-Little-Pigs-Siri-Proxy.
 
 Add this to your config file:
     - name: 'Whut'
-      git: 'git://github.com/Swimo/SiriProxy-Whut.git'
+      git: 'git://github.com/NeMeSiStm/SiriProxy-Whut.git'
+      whut_ip: '192.168.11.50'          #location of your sonosphp class
+      room0: 'name your room'           #Insert your Room name here
+      room1: 'name your room'
+      room2: 'name your room'
+      room3: 'name your room'
+      room4: 'name your room'
+      room5: 'name your room'
+      room6: 'name your room'
+      room7: 'name your room'
+      room8: 'name your room'
+      room9: 'name your room'
