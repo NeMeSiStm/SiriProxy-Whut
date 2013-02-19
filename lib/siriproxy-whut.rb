@@ -19,6 +19,8 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     listen_for /starte die Wiedergabe im Badezimmer/i do
 
         connection = Net::HTTP.new("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play")
+        
+        connection.open
     
     say "Die Musik im Badezimmer wurde gestartet."
     
