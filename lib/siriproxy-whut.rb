@@ -17,7 +17,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /Musik Badezimmer Ein/i do
         
-            Net::HTTP.get(URI.parse("#{@serveradresse}/index.php?zone=Badezimmer&do=Play"))
+            @response = Net::HTTP.get(URI.parse("#{@serveradresse}/index.php?zone=Badezimmer&do=Play"))
         
     say "Die Musik im Badezimmer wurde gestartet."
     
