@@ -38,8 +38,8 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
 
-#{
-listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
+
+/* listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
     open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeUp")
 
     say "Die Lautstärke im Badezimmer wurde erhöht."
@@ -58,6 +58,6 @@ listen_for /sonos veringere Lautstärke im Badezimmer/i do
 }
 end
 
-
+*/
 
 end
