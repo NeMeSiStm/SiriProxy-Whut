@@ -56,8 +56,6 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 #    request_completed
     #Die Lautstärke wird um einen Punkt verringert.
 
-end
-
-*/
+#end
 
 end
