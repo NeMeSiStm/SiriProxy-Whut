@@ -5,6 +5,7 @@ require 'pp'
 
 class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
+        @serveradresse = config["whut_url"]
     end
 
     listen_for /test Musik/i do
@@ -16,7 +17,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /Musik Badezimmer Ein/i do
         
-            @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play"))
+            Net::HTTP.get(URI.parse("#{@serveradresse}/index.php?zone=Badezimmer&do=Play"))
         
     say "Die Musik im Badezimmer wurde gestartet."
     
