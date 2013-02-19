@@ -2,7 +2,7 @@
 require 'cora'
 require 'siri_objects'
 require 'pp'
-require 'net/http'
+require 'httparty'
 
 class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
@@ -17,11 +17,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
     listen_for /starte die Wiedergabe im Badezimmer/i do
-
-        connection = Net::HTTP.new("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play")
-        
-        connection.start
-    
+	@response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play"))
     say "Die Musik im Badezimmer wurde gestartet."
     
     request_completed
