@@ -16,6 +16,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
     listen_for /Musik Badezimmer Ein/i do
+        say "des isch die serveradresse: http://#{@whut}/sonos/ stimp de?"
         
             @response = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=Badezimmer&do=Play"))
         
