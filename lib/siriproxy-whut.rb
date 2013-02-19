@@ -2,7 +2,6 @@
 require 'cora'
 require 'siri_objects'
 require 'pp'
-require 'json'
 
 class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
@@ -18,9 +17,8 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     listen_for /starte die Wiedergabe im Badezimmer/i do
         say "Ich probiers!"
             @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play"))
-            @result = JSON.parse(@response)
-            @joke = @result["value"]["joke"]
-    say "Die Musik im Badezimmer wurde gestartet. #{joke}"
+        
+    say "Die Musik im Badezimmer wurde gestartet."
     
     request_completed
     #Musik im Badezimmer Ein.
@@ -29,7 +27,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /stoppe die Wiedergabe im Badezimmer/i do
     
-    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause")
+            @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause")
     
     say "Die Musik im Badezimmer wurde angehalten."
     
