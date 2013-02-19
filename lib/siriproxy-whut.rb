@@ -9,13 +9,13 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /test Musik/i do
 
-    say "Hallo Michael, Sonos zu PHP funktioniert einwandfrei. Glaube ich zumindest." #say something to the user!
+    say "Hello, SiriProxy zu WHUT funktioniert einwandfrei. Glaube ich zumindest." #say something to the user!
     
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
 
-    listen_for /starte die Wiedergabe im Badezimmer/i do
-        say "Ich probiers!"
+    listen_for /Musik Badezimmer Ein/i do
+        
             @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play"))
         
     say "Die Musik im Badezimmer wurde gestartet."
@@ -25,7 +25,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     
     end
 
-    listen_for /stoppe die Wiedergabe im Badezimmer/i do
+    listen_for /Musik Badezimmer Aus/i do
     
             @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause"))
     

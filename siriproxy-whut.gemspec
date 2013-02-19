@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "siriproxy-whut"
-  s.version     = "0.0.2"
+  s.version     = "0.1.0"
   s.authors     = ["NeMeSiS_tm"]
   s.email       = [""]
   s.homepage    = "https://github.com/Swimo/SiriProxy-Whut"
