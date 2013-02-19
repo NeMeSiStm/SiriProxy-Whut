@@ -18,7 +18,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /starte die Wiedergabe im Badezimmer/i do
 
-    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play")
+        exec("curl http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play >/dev/null")
     
     say "Die Musik im Badezimmer wurde gestartet."
     
