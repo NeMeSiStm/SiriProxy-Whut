@@ -2,11 +2,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "siriproxy-whereami"
-  s.version     = "0.1" 
-  s.authors     = ["Swimo"]
-  s.email       = ["me@simonturp.co.uk"]
-  s.homepage    = "https://github.com/Swimo/SiriProxy---WhereAmI"
+  s.name        = "siriproxy-whut"
+  s.version     = "0.0.1" 
+  s.authors     = [""]
+  s.email       = [""]
+  s.homepage    = "https://github.com/Swimo/SiriProxy-Whut"
   s.summary     = %q{A plugin to show you where you are}
   s.description = %q{This plugin shows you a map of your current location when you ask "Where am I?". Will also tell you current road name.}
 
