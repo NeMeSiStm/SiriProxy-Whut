@@ -17,7 +17,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /starte die Wiedergabe im Badezimmer/i do
 
-    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=Play")
+    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Play")
     
     say "Die Musik im Badezimmer wurde gestartet."
     
@@ -28,7 +28,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /stoppe die Wiedergabe im Badezimmer/i do
     
-    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=Pause")
+    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause")
     
     say "Die Musik im Badezimmer wurde angehalten."
     
@@ -40,7 +40,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
 
 # listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
-#    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeUp")
+#    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=VolumeUp")
 
 #    say "Die Lautstärke im Badezimmer wurde erhöht."
     
@@ -49,7 +49,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 #end
 
 #listen_for /sonos veringere Lautstärke im Badezimmer/i do
-#    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeDown")
+#    open("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=VolumeDown")
     
 #    say "Die Lautstärke im Badezimmer wurde verringert."
     
