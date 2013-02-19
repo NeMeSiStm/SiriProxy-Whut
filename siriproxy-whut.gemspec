@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "siriproxy-whut"
-  s.version     = "0.0.1" 
-  s.authors     = [""]
+  s.version     = "0.0.2"
+  s.authors     = ["NeMeSiS_tm"]
   s.email       = [""]
   s.homepage    = "https://github.com/Swimo/SiriProxy-Whut"
-  s.summary     = %q{A plugin to show you where you are}
-  s.description = %q{This plugin shows you a map of your current location when you ask "Where am I?". Will also tell you current road name.}
+  s.summary     = %q{A plugin to open a url on SiriProxy}
+  s.description = %q{FU.}
 
   s.rubyforge_project = "siriproxy-whereami"
 
@@ -19,5 +19,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  s.add_runtime_dependency "json"
+  # s.add_runtime_dependency "json"
 end
