@@ -6,6 +6,7 @@ require 'pp'
 class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
         @whut = config["whut_ip"]
+        puts @whut
     end
 
     listen_for /test Musik/i do
