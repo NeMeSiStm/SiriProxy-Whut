@@ -2,7 +2,6 @@
 require 'cora'
 require 'siri_objects'
 require 'pp'
-require 'OpenUri'
 
 class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
