@@ -14,7 +14,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
 
-    listen_for /sonos starte die Wiedergabe im Badezimmer/i do
+    listen_for /starte die Wiedergabe im Badezimmer/i do
 
     open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=Play")
     
@@ -25,9 +25,22 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     
     end
 
+    listen_for /stoppe die Wiedergabe im Badezimmer/i do
+    
+    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=Pause")
+    
+    say "Die Musik im Badezimmer wurde angehalten."
+    
+    request_completed
+    #Musik im Badezimmer Aus.
+    
+    end
+
+
+#{
 listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
     open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeUp")
-    
+
     say "Die Lautstärke im Badezimmer wurde erhöht."
     
     request_completed
@@ -41,6 +54,7 @@ listen_for /sonos veringere Lautstärke im Badezimmer/i do
     
     request_completed
     #Die Lautstärke wird um einen Punkt verringert.
+}
 end
 
 
