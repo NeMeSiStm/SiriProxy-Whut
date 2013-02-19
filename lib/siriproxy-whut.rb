@@ -17,9 +17,8 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
     listen_for /Musik Badezimmer Ein/i do
-        say "des isch die serveradresse: http://#{@whut}/sonos/ stimp de?"
         
-            @response = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=Badezimmer&do=Play"))
+            sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=Badezimmer&do=Play"))
         
     say "Die Musik im Badezimmer wurde gestartet."
     
@@ -30,7 +29,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /Musik Badezimmer Aus/i do
     
-            @response = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause"))
+            sonosbefehl = Net::HTTP.get(URI.parse("http://192.168.11.50/sonos/index.php?zone=Badezimmer&do=Pause"))
     
     say "Die Musik im Badezimmer wurde angehalten."
     
