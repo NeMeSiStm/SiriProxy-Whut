@@ -6,8 +6,8 @@ Add this to your config file:
     - name: 'Whut'
       git: 'git://github.com/NeMeSiStm/SiriProxy-Whut.git'
       whut_ip: '192.168.11.50'          #location of your sonosphp class
-      whut_room0: 'name your room'           #Insert your Room name here
-      whut_room1: 'name your room'
+      whut_room0: 'name your room'      #Insert your Room name here
+      whut_room1: 'name your room'      #don't use Ä ä Ö ö Ü ü or ß
       whut_room2: 'name your room'
       whut_room3: 'name your room'
       whut_room4: 'name your room'
