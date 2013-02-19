@@ -39,23 +39,23 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
 
 
-/* listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
-    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeUp")
+# listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
+#    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeUp")
 
-    say "Die Lautstärke im Badezimmer wurde erhöht."
+#    say "Die Lautstärke im Badezimmer wurde erhöht."
     
-    request_completed
+#    request_completed
     #Die Lautstärke wird um einen Punkt erhöht.
-end
+#end
 
-listen_for /sonos veringere Lautstärke im Badezimmer/i do
-    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeDown")
+#listen_for /sonos veringere Lautstärke im Badezimmer/i do
+#    open("http://milkyway.merkur.local/sonos/index.php?zone=Badezimmer&do=VolumeDown")
     
-    say "Die Lautstärke im Badezimmer wurde verringert."
+#    say "Die Lautstärke im Badezimmer wurde verringert."
     
-    request_completed
+#    request_completed
     #Die Lautstärke wird um einen Punkt verringert.
-}
+
 end
 
 */
