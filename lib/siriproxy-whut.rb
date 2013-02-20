@@ -37,10 +37,18 @@ listen_for /status/i do
 end
 
 listen_for /test #{@roomzero}/i do
-    say "#{@whut} test #{@roomone}"
+    say "#{@roomzero}"
+    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"))
+    say "ausgefuehrt"
     request_completed
     
 end
+
+
+
+
+
+
 
 listen_for /Musik #{@roomzero} Ein/i do
         
@@ -51,7 +59,7 @@ listen_for /Musik #{@roomzero} Ein/i do
     request_completed
     #Musik im Raum 0 Ein.
     
-    end
+end
 
     listen_for /Musik Badezimmer Aus/i do
     
