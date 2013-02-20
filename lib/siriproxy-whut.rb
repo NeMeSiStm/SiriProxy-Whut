@@ -23,11 +23,12 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         @roomnine = config['whut_room9']
         @status_ein = [ 'ein', 'on', 'einschalten', 'aktivieren', 'activate', 'play', 'wiedergeben' ]
         @status_aus = ['aus', 'off', 'ausschalten', 'stopp', 'stoppen', 'halt', 'anhalten', 'pause' ]
-        @welli = ['music', 'musik']
+        @welli = ['Music', 'Musik']
 
     end
 
     listen_for /test #{@welli}/i do
+            say "#{@roomzero} #{@welli} #{@status_ein}"
             say "Hello, SiriProxy WHUT funktioniert einwandfrei. Glaube ich zumindest." #say something to the user!
         request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
