@@ -31,11 +31,16 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
 listen_for /status/i do
-    say "#{@whut} test #{roomzero}"
+    say "#{@whut} test #{@roomzero}"
     request_completed
     
 end
 
+listen_for /status status/i do
+    say "#{@whut} test #{@roomone}"
+    request_completed
+    
+end
 
 listen_for /Musik #{@roomzero} Ein/i do
     
