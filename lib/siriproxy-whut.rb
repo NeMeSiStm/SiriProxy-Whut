@@ -21,8 +21,8 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         @roomseven = config['whut_room7']
         @roomeight = config['whut_room8']
         @roomnine = config['whut_room9']
-        @status.ein = [ 'ein', 'on', 'einschalten', 'aktivieren', 'activate', 'play', 'wiedergeben' ]
-        @status.aus = ['aus', 'off', 'ausschalten', 'stopp', 'stoppen', 'halt', 'anhalten', 'pause' ]
+        @status_ein = [ 'ein', 'on', 'einschalten', 'aktivieren', 'activate', 'play', 'wiedergeben' ]
+        @status_aus = ['aus', 'off', 'ausschalten', 'stopp', 'stoppen', 'halt', 'anhalten', 'pause' ]
         @welli = ['music', 'musik']
 
     end
@@ -33,14 +33,14 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
 
-    listen_for /#{@roomzero} #{@welli} #{@status.ein}/i do
+    listen_for /#{@roomzero} #{@welli} #{@status_ein}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver.ip:@webserver.port}/sonos/index.php?zone=#{@roomzero}&do=Play"))
             say "Ein"
         request_completed
     end
 
-    listen_for /#{@roomzero} #{@welli} #{@status.aus}/i do
+    listen_for /#{@roomzero} #{@welli} #{@status_aus}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver.ip:@webserver.port}/sonos/index.php?zone=#{@roomzero}&do=Pause"))
             say "Aus"
