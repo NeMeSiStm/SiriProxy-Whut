@@ -43,12 +43,10 @@ listen_for /test #{@roomzero}/i do
 end
 
 listen_for /Musik #{@roomzero} Ein/i do
-    
-    say "http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"
-    
-    #        sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"))
         
-    say "Die Musik in #{room0} wurde gestartet."
+            sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"))
+        
+    say "Musik #{roomzero} wurde gestartet."
     
     request_completed
     #Musik im Raum 0 Ein.
