@@ -35,25 +35,25 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
 
     listen_for /#{@roomzero} #{@welli} #{@status_ein}/i do
             say "#{@roomzero}"
-                sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Play"))
+                sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Play"))
             say "Ein"
         request_completed
     end
 
     listen_for /#{@roomzero} #{@welli} #{@status_aus}/i do
             say "#{@roomzero}"
-                sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Pause"))
+                sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Pause"))
             say "Aus"
         request_completed
     end
 
 listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
 
-     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
-     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
-     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
-     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
-     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
+    #     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
+    # sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
+    # sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
+    # sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
+    # sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
 
     say "Die Lautstärke im Badezimmer wurde erhöht."
     
@@ -63,11 +63,11 @@ listen_for /sonos erhöhe Lautstärke im Badezimmer/i do
 
 listen_for /sonos veringere Lautstärke im Badezimmer/i do
 
-    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
-    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
-    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
-    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
-    sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip:@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
+    #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
+    #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
+    #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
+    #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
+    #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
 
     say "Die Lautstärke im Badezimmer wurde verringert."
     
