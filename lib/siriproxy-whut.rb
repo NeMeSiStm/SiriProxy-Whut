@@ -10,7 +10,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         @whut = config['whut_ip']
         
         #Raumvariablen definieren
-        @roomzero = config['whut_room.one']
+        @roomzero = config['whut_room.one', 'whut_room1']
         @roomone = config['whut_room1']
         @roomtwo = config['whut_room2']
         @roomthree = config['whut_room3']
@@ -30,7 +30,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
 
-listen_for /status/i do
+listen_for /status #{@roomzero}/i do
     say "#{@whut} test #{@roomzero}"
     request_completed
     
@@ -50,7 +50,7 @@ end
 
 
 
-listen_for /Musik #{@roomzero} Ein/i do
+listen_for /#{@roomzero} Ein/i do
         
             sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"))
         
