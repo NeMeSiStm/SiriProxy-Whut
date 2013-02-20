@@ -23,24 +23,24 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         @roomnine = config['whut_room9']
         @status.on = [ 'ein', 'on', 'einschalten', 'aktivieren', 'activate', 'play', 'wiedergeben' ]
         @status.off = ['aus', 'off', 'ausschalten', 'stopp', 'stoppen', 'halt', 'anhalten', 'pause' ]
-        @joker = ['music', 'musik']
+        @welli = ['music', 'musik']
 
     end
 
-    listen_for /test #{joker}/i do
+    listen_for /test #{@welli}/i do
             say "Hello, SiriProxy WHUT funktioniert einwandfrei. Glaube ich zumindest." #say something to the user!
         request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
 
 
-    listen_for /#{@roomzero} #{@joker} #{@status.on}/i do
+    listen_for /#{@roomzero} #{@welli} #{@status.on}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver.ip:@webserver.port}/sonos/index.php?zone=#{@roomzero}&do=Play"))
             say "Ein"
         request_completed
     end
 
-    listen_for /#{@roomzero} #{@joker} #{@status.off}/i do
+    listen_for /#{@roomzero} #{@welli} #{@status.off}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver.ip:@webserver.port}/sonos/index.php?zone=#{@roomzero}&do=Pause"))
             say "Aus"
