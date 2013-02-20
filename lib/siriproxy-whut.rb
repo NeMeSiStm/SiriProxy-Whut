@@ -7,19 +7,19 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     def initialize(config)
         
         #Webserver Ip Adresse oder FQDN definieren
-        @whut = config["whut_ip"]
+        @whut = config['whut_ip']
         
         #Raumvariablen definieren
-        @roomzero = config["whut_room0"]
-        @roomone = config["whut_room1"]
-        @roomtwo = config["whut_room2"]
-        @roomthree = config["whut_room3"]
-        @roomfour = config["whut_room4"]
-        @roomfive = config["whut_room5"]
-        @roomsix = config["whut_room6"]
-        @roomseven = config["whut_room7"]
-        @roomeight = config["whut_room8"]
-        @roomnine = config["whut_room9"]
+        @roomzero = config['whut_room0']
+        @roomone = config['whut_room1']
+        @roomtwo = config['whut_room2']
+        @roomthree = config['whut_room3']
+        @roomfour = config['whut_room4']
+        @roomfive = config['whut_room5']
+        @roomsix = config['whut_room6']
+        @roomseven = config['whut_room7']
+        @roomeight = config['whut_room8']
+        @roomnine = config['whut_room9']
 
     end
 
