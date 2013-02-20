@@ -36,7 +36,7 @@ listen_for /status/i do
     
 end
 
-listen_for /status status/i do
+listen_for /status #{@roomzero}/i do
     say "#{@whut} test #{@roomone}"
     request_completed
     
