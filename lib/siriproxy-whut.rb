@@ -36,7 +36,7 @@ listen_for /status/i do
     
 end
 
-listen_for /test #{@roomzero}/i do
+listen_for /test #{@roomzero} Ein/i do
     say "#{@roomzero}"
     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@whut}/sonos/index.php?zone=#{@roomzero}&do=Play"))
     say "ausgefuehrt"
