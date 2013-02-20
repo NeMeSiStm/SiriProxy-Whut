@@ -10,7 +10,7 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         @whut = config['whut_ip']
         
         #Raumvariablen definieren
-        @roomzero = config['whut_room0']
+        @roomzero = config['whut_room.one']
         @roomone = config['whut_room1']
         @roomtwo = config['whut_room2']
         @roomthree = config['whut_room3']
