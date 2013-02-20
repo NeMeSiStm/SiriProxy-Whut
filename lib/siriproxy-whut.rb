@@ -11,15 +11,15 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
         
         #Raumvariablen definieren
         @roomzero = config["whut_room0"]
-        room1 = config["whut_room1"]
-        room2 = config["whut_room2"]
-        room3 = config["whut_room3"]
-        room4 = config["whut_room4"]
-        room5 = config["whut_room5"]
-        room6 = config["whut_room6"]
-        room7 = config["whut_room7"]
-        room8 = config["whut_room8"]
-        room9 = config["whut_room9"]
+        @roomone = config["whut_room1"]
+        @roomtwo = config["whut_room2"]
+        @roomthree = config["whut_room3"]
+        @roomfour = config["whut_room4"]
+        @roomfive = config["whut_room5"]
+        @roomsix = config["whut_room6"]
+        @roomseven = config["whut_room7"]
+        @roomeight = config["whut_room8"]
+        @roomnine = config["whut_room9"]
 
     end
 
@@ -29,6 +29,13 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     
     request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
+
+listen_for /test test/i do
+    say "#{@whut} test #{roomzero}"
+    request_completed
+    
+end
+
 
 listen_for /Musik #{@roomzero} Ein/i do
     
