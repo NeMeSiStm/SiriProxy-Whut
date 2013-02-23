@@ -28,27 +28,26 @@ class SiriProxy::Plugin::Whut < SiriProxy::Plugin
     end
 
     listen_for /test #{@welli}/i do
-            say "#{@roomzero} #{@welli} #{@status_ein}"
             say "Hello, SiriProxy WHUT funktioniert einwandfrei. Glaube ich zumindest." #say something to the user!
         request_completed #always complete your request! Otherwise the phone will "spin" at the user!
     end
 
 
-    listen_for /#{@roomzero} Musik #{@status_ein}/i do
+    listen_for /#{@roomzero} #{@status_ein}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Play"))
             say "Ein"
         request_completed
     end
 
-    listen_for /#{@roomzero} Musik #{@status_aus}/i do
+    listen_for /#{@roomzero} #{@status_aus}/i do
             say "#{@roomzero}"
                 sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=#{@roomzero}&do=Pause"))
             say "Aus"
         request_completed
     end
 
-listen_for /Erhöhe die Lautstärke im Badezimmer/i do
+listen_for /#{@roomzero} lauter/i do
 
     #     sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
     # sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeUp"))
@@ -62,7 +61,7 @@ listen_for /Erhöhe die Lautstärke im Badezimmer/i do
     #Die Lautstärke wird um 5 Punkte erhöht.
     end
 
-listen_for /Veringere Lautstärke im Badezimmer/i do
+listen_for /#{@roomzero} leiser/i do
 
     #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
     #sonosbefehl = Net::HTTP.get(URI.parse("http://#{@webserver_ip}:#{@webserver_port}/sonos/index.php?zone=Badezimmer&do=VolumeDown"))
