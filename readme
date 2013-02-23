@@ -1,15 +1,25 @@
-Reponds to "Where Am I" with a map & the current street they are on, using the Google Maps API.
+Dies ist ein Plugin zum steuern eines oder mehrerer Sonos Zone Players
 
-Works with Three-Little-Pigs-Siri-Proxy.
+Benötigt wird dafür ein Webserver mit installierter SonosPHP Klasse
 
-Add this to your config file:
+Die Sonos Klasse muss in einer frei zugänglichen Adresse befinden.
+
+Beispiel: http://192.168.11.51/sonos/index.php
+
+Download hier: http://www.trautner.net/wp-content/uploads/2011/01/Sonos.zip
+
+Hintergrundinformationen zur SonosPHP Klasse: http://www.ip-symcon.de/wiki/PHPSonos
+
+Folgende Zeilen zur config.yml hinzufügen:
+
     - name: 'Whut'
       git: 'git://github.com/NeMeSiStm/SiriProxy-Whut.git'
-      whut_ip: '192.168.11.50'          #location of your sonosphp class
-      whut_room0: 'name your room'      #Insert your Room name here
-      whut_room1: 'name your room'      #don't use Ä ä Ö ö Ü ü or ß
-      whut_room2: 'name your room'
-      whut_room3: 'name your room'
+      whut_ip: '192.168.11.XX'          #Webserver IP
+      whut_port: '80'                   #Webserver Port
+      whut_room0: 'Badezimmer'          #Insert your Room name here
+      whut_room1: 'Schlafzimmer'        #don't use ä ö
+      whut_room2: 'Wohnzimmer'
+      whut_room3: 'Latrine'
       whut_room4: 'name your room'
       whut_room5: 'name your room'
       whut_room6: 'name your room'
